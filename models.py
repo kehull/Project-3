@@ -6,7 +6,7 @@ def create_classes(db):
         name = db.Column(db.String(64))
         customer_id=db.Column(db.VARCHAR)
         gender=db.Column(db.String)
-        age=db.Column(db.Int)
+        age=db.Column(db.Integer)
         income=db.column(db.Float)
         offer=db.column(db.VARCHAR)
         membership_date=db.column(db.VARCHAR)
