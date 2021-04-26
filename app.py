@@ -28,6 +28,7 @@ def about():
 
 @app.route("/model", methods=["GET", "POST"])
 def send():
+    table_data={}
     if request.method == "POST":
         name = request.form["name"]
         gender = request.form["gender"]
@@ -36,11 +37,12 @@ def send():
         customer_id=uuid.uuid4().hex
         date=dt.datetime.today().strftime('%Y%m%d')
         offer=uuid.uuid4().hex
+        table_data={'name':name,'customer_id':customer_id,'gender':gender,'age':age,'income':income,'offer':offer,'date':date}
         customer = Customer(name=name, customer_id=customer_id, gender=gender, age=age,income=income,offer=offer,membership_date=date)
         db.session.add(customer)
         db.session.commit()
-        return redirect("/", code=302)
-    return render_template("model.html")
+        
+    return render_template("model.html",table_data=table_data)
 
 if __name__ == "__main__":
     app.run()

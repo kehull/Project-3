@@ -13,6 +13,8 @@
 	<meta name="keywords" content="">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
+	
+	
 	<!-- Site Title -->
 	<title>Coffee</title>
 
@@ -85,7 +87,7 @@
 					<div class="row height align-items-center justify-content-center">
 						<div class="col-lg-10">
 							<div class="generic-banner-content">
-								<h2 class="text-white">HERE YOU GO DAVID</h2>
+								<h2 class="text-white">{{table_data}}</h2>
 								<p class="text-white">Go ham this page is all for you</p>
 							</div>							
 						</div>
@@ -96,55 +98,60 @@
 		
 		<!-- About Generic Start -->
 		<div class="main-wrapper">
-			
-			<!-- Start video-sec Area -->
-			<section class="video-sec-area pt-100" id="about">
-				<div class="container">
-					<div class="row justify-content-start align-items-center">
-						<div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
-							<div class="overlay overlay-bg"></div>
-							<a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="img/play-icon.png" alt=""></a>
-						</div>						
-						<div class="col-lg-6 video-left">
-							<h6>Live Coffee making process.</h6>
-							<h1>We Telecast our <br>
-							Coffee Making Live</h1>
-							<p><span>We are here to listen from you deliver exellence</span></p>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
-							</p>
-							<img class="img-fluid" src="img/signature.png" alt="">
-						</div>
-					</div>
-				</div>	
-			</section>
-			<!-- End video-sec Area -->
-
-			<!-- Start Generic Area -->
-			<section class="about-generic-area section-gap">
-				<div class="container border-top-generic">
-					<h3 class="about-title mb-30">Elaboration about Generic Page</h3>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="img-text">
-								<img src="img/a.jpg" alt="" class="img-fluid float-left mr-20 mb-20">
-								<p>Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. Overnight, online casino players found themselves being chased by the Federal government. But, after a fortnight, the online casino industry came up with a solution and new online casinos started taking root. These began to operate under a different business umbrella, and by doing that, rendered the transfer of money to and from them legal. A major part of this was enlisting electronic banking systems that would accept this new clarification and start doing business with me. Listed in this article are the electronic banking systems that accept players from the United States that wish to play in online casinos.</p>
+			<section class="filters">
+				<div class="row">
+					<div class="col-md-offset-2 col-md-8">
+						<form method="POST" action="/send" role="form", name="petform">
+							<div class="form-group">
+								<label for="inputName">Name</label>
+								<input type="text" class="form-control" id="inputName" name="name" placeholder="John Smith">
 							</div>
-						</div>
-						<div class="col-lg-12">
-							<p>Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. Overnight, online casino players found themselves being chased by the Federal government. But, after a fortnight, the online casino industry came up with a solution and new online casinos started taking root. These began to operate under a different business umbrella, and by doing that, rendered the transfer of money to and from them legal. A major part of this was enlisting electronic banking systems that would accept this new clarification and start doing business with me. Listed in this article are the electronic banking systems that accept players from the United States that wish to play in online casinos.</p>
-						</div>
-						<div class="col-lg-12">
-							<p>Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. Overnight, online casino players found themselves being chased by the Federal government. But, after a fortnight, the online casino industry came up with a solution and new online casinos started taking root. These began to operate under a different business umbrella, and by doing that, rendered the transfer of money to and from them legal. A major part of this was enlisting electronic banking systems that would accept this new clarification and start doing business with me. Listed in this article are the electronic banking systems that accept players from the United States that wish to play in online casinos.</p>
-						</div>
-						<div class="col-md-12">
-							<div class="img-text">
-								<img src="img/a2.jpg" alt="" class="img-fluid float-left mr-20 mb-20">
-								<p>Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. Overnight, online casino players found themselves being chased by the Federal government. But, after a fortnight, the online casino industry came up with a solution and new online casinos started taking root. These began to operate under a different business umbrella, and by doing that, rendered the transfer of money to and from them legal. A major part of this was enlisting electronic banking systems that would accept this new clarification and start doing business with me. Listed in this article are the electronic banking systems that accept players from the United States that wish to play in online casinos.</p>
+							<div class="form-group">
+								<label for="inputLat">Gender</label>
+								<input type="text" class="form-control" id="inputGender" name="gender" placeholder="F/M/O">
 							</div>
-						</div>
+							<div class="form-group">
+								<label for="inputLon">Age</label>
+								<input type="text" class="form-control" id="inputAge" name="age" placeholder="118">
+							</div>
+							<div class="form-group">
+								<label for="inputLon">Income</label>
+								<input type="text" class="form-control" id="inputIncome" name="income" placeholder="1000000.00">
+							</div>
+							<button id="enter-btn" type="button" class="btn btn-default">Submit</button>
+						</form>
 					</div>
 				</div>
+			
+	
+				
+			</section>
+		</div>
+			
+			
+
+			<!-- Start Generic Area -->
+			<section class='customer table'>
+				<div class="col-md-10">
+				<div id="table-area" class="">
+				  <table id="customer-table" class="table table-striped">
+					<thead>
+					  <tr>
+						<th class="table-head">Name</th>
+						<th class="table-head">Customer_id</th>
+						<th class="table-head">Gender</th>
+						<th class="table-head">Age</th>
+						<th class="table-head">Income</th>
+						<th class="table-head">Offer</th>
+						<th class="table-head">Membership_date</th>
+					  </tr>
+					</thead>
+					<tbody></tbody>
+				  </table>
+				</div>
+			  </div>
+			</div>
+		
 			</section>
 			<!-- End Generic Start -->		
 
@@ -163,6 +170,15 @@
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->	
 			
+			
+			<!--js link-->
+			
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+			<script type='text/javascript'>
+				var tableData= {{table_data}};
+		
+				</script>
+			<script type='text/javascript' src="js/table_generator.js"></script>
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			
