@@ -26,7 +26,7 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/predictions", methods=["GET", "POST"])
+@app.route("/model", methods=["GET", "POST"])
 def send():
     if request.method == "POST":
         name = request.form["name"]
@@ -40,7 +40,7 @@ def send():
         db.session.add(customer)
         db.session.commit()
         return redirect("/", code=302)
-    return render_template("predictions.html")
+    return render_template("model.html")
 
 if __name__ == "__main__":
     app.run()
