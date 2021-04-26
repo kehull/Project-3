@@ -7,9 +7,9 @@ def create_classes(db):
         customer_id=db.Column(db.VARCHAR)
         gender=db.Column(db.String)
         age=db.Column(db.Integer)
-        income=db.column(db.Float)
-        offer=db.column(db.VARCHAR)
-        membership_date=db.column(db.VARCHAR)
+        income=db.Column(db.Float)
+        offer=db.Column(db.VARCHAR)
+        membership_date=db.Column(db.VARCHAR)
 
 
         def __repr__(self):
