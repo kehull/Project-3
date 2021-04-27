@@ -101,7 +101,7 @@
 			<section class="filters">
 				<div class="row">
 					<div class="col-md-offset-2 col-md-8">
-						<form method="POST" role="form", name="petform">
+						<form method="POST" role="form", name="customerform">
 							<div class="form-group">
 								<label for="inputName">Name</label>
 								<input type="text" class="form-control" id="inputName" name="name" placeholder="John Smith">
@@ -118,7 +118,7 @@
 								<label for="inputLon">Income</label>
 								<input type="text" class="form-control" id="inputIncome" name="income" placeholder="1000000.00">
 							</div>
-							<input id = "enter-btn" type="submit" value="submit" class="btn btn-default">
+							<input id = "enter-btn" type="submit" value="Submit" class="btn btn-default">
 						</form>
 					</div>
 				</div>
@@ -146,7 +146,19 @@
 						<th class="table-head">Membership_date</th>
 					  </tr>
 					</thead>
-					<tbody></tbody>
+					<tbody>
+						<!-- {% for row_index in range(table_data['name']|count) %}
+    				<tr>
+      					<td>{{ x[row_index]['name'] }}</td>
+      					<td>{{ x[row_index]['customer_id'] }}</td>
+						<td>{{ x[row_index]['gender'] }}</td>
+						<td>{{ x[row_index]['age'] }}</td>
+						<td>{{ x[row_index]['income'] }}</td>
+						<td>{{ x[row_index]['offer'] }}</td>
+						<td>{{ x[row_index]['membership_date'] }}</td>
+    				</tr>
+					{% endfor %} -->
+					</tbody>
 				  </table>
 				</div>
 			  </div>
@@ -174,11 +186,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<!--js link-->
 			
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-			<script type='text/javascript'>
+			<!-- <script type='text/javascript'>
 				var tableData= {{table_data}};
 		
-				</script>
-			<script type='text/javascript' src="js/table_generator.js"></script>
+				</script> -->
+			<!-- <script type='text/javascript' src="../static/js/table_generator.js"></script> -->
 			<script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="../static/js/vendor/bootstrap.min.js"></script>			
