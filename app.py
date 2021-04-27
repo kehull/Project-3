@@ -41,7 +41,6 @@ def send():
     
     #postgres form setup and table vars
     if request.method == "POST":
-        table_data=table_data
         #get info from forms
         name = request.form["name"]
         gender = request.form["gender"]
