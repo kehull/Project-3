@@ -7,9 +7,15 @@ greenlet==1.0.0
 importlib-metadata==4.0.1
 itsdangerous==1.1.0
 Jinja2==2.11.3
+joblib==1.0.1
 MarkupSafe==1.1.1
+numpy==1.19.5
 psycopg2==2.8.6
+scikit-learn==0.24.1
+scipy==1.5.4
+sklearn==0.0
 SQLAlchemy==1.4.11
+threadpoolctl==2.1.0
 typing-extensions==3.7.4.3
 Werkzeug==1.0.1
 wincertstore==0.2
