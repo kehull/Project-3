@@ -30,7 +30,6 @@ def about():
 def send():
     table_data={}
     if request.method == "POST":
-        table_data=""
         name = request.form["name"]
         gender = request.form["gender"]
         age = request.form["age"]

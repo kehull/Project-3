@@ -177,7 +177,17 @@ Latest commit a673614 3 hours ago
 					  </tr>
 					</thead>
 					<tbody>
-					
+						{% for row in table_data %}
+						<tr>
+						  <td>{{ row['name'] }}</td>
+						  <td>{{ row['customer_id'] }}</td>
+						  <td>{{ row['gender'] }}</td>
+						  <td>{{ row['age'] }}</td>
+						  <td>{{ row['income'] }}</td>
+						  <td>{{ row['offer'] }}</td>
+						  <td>{{ row['membership_date'] }}</td>
+						</tr>
+					{% endfor %}
 					</tbody>
 				  </table>
 				</div>
@@ -206,11 +216,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<!--js link-->
 			
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-			<script type='text/javascript'>
+			<!-- <script type='text/javascript'>
 				var tableData= {{table_data}};
 		
 				</script>
-			<script type='text/javascript' src="js/table_generator.js"></script>
+			<script type='text/javascript' src="js/table_generator.js"></script> -->
 			<script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="../static/js/vendor/bootstrap.min.js"></script>			
