@@ -34,7 +34,7 @@ def about():
 def send():
     table_data=[]
     label_encoder=LabelEncoder()
-    model=joblib.load("models/random_forest_model.h5")   
+    model=joblib.load('models/logistic_regression_model.h5')   
     if request.method == "POST":
         name = request.form["name"]
         gender = request.form["gender"]
@@ -46,8 +46,8 @@ def send():
         encoded_gender=label_encoder.transform(gender_encode)
         id_encode=label_encoder.fit(customer_id)
         encoded_id=label_encoder.transform(id_encode)
-        model_data=[encoded_id,encoded_gender,age,income]
-        encoded_predictions = model.predict_classes(model_data)
+        model_data=[[encoded_id,encoded_gender,age,income]]
+        encoded_predictions = model.predict(model_data)
         prediction_labels = label_encoder.inverse_transform(encoded_predictions)
         offer=prediction_labels
         customer = Customer(name=name, customer_id=customer_id, gender=gender, age=age,income=income,offer=offer,membership_date=date)
