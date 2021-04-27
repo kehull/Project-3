@@ -48,7 +48,7 @@ def send():
         encoded_id=label_encoder.transform(customer_id)
         model_data=[[encoded_id,encoded_gender,age,income]]
         predictions = model.predict(model_data)
-        offer=predictions
+        offer=str(predictions[0])
         customer = Customer(name=name, customer_id=customer_id, gender=gender, age=age,income=income,offer=offer,membership_date=date)
         db.session.add(customer)
         db.session.commit()
