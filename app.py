@@ -31,7 +31,7 @@ def about():
 def send():
     table_data={}
     if request.method == "POST":
-        table_data=""
+        table_data={}
         name = request.form["name"]
         gender = request.form["gender"]
         age = request.form["age"]
@@ -43,10 +43,10 @@ def send():
         db.session.add(customer)
         db.session.commit()
         table_data={"name":name,"customer_id":customer_id,"gender":gender,"age":age,"income":income,"offer":offer,"membership_date":date}
-        redirect("/model", code=302)
+        return redirect("/model", code=302),table_data
         
     
-    return render_template("model.html",table_data=table_data)
+    return render_template("model.html")
 
 if __name__ == "__main__":
     app.run()
