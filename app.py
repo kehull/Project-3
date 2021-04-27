@@ -14,6 +14,7 @@ from sklearn.linear_model import LogisticRegression
 
 app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
+app.config['JSON_SORT_KEYS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace('postgres://', 'postgresql://') or "sqlite:///db.sqlite"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -103,23 +104,17 @@ def send():
 def customer():
     results = db.session.query(Customer.name, Customer.customer_id, Customer.gender,Customer.age,Customer.income,Customer.offer,Customer.membership_date).all()
 
-    name=[result[0] for result in results]
-    customer_id= [result[1] for result in results] 
-    gender = [result[2] for result in results]
-    age=[result[3] for result in results]
-    income=[result[4] for result in results]
-    offer=[result[5] for result in results]
-    membership=[result[6] for result in results] 
+    for name,customer_id,gender,age,income,offer,membership_date in results:
 
-    customer_data = [{
-        "name": name,
-        "customer_id": customer_id,
-        "gender": gender,
-        "age": age,
-        "income": income,
-        "offer": offer,
-        "membership_date": membership
-    }]
+        customer_data = [{
+            "name": name,
+            "customer_id": customer_id,
+            "gender": gender,
+            "age": age,
+            "income": income,
+            "offer": offer,
+            "membership_date": membership
+        }]
 
     return jsonify(customer_data)
 
