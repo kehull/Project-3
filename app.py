@@ -94,9 +94,8 @@ def send():
         test={"name":name,"customer_id":customer_id,"gender":gender,"age":age,"income":income,"offer":offer,"membership_date":date}
         #append to table data
         table_data.append(test)
-    
          
-     
+        
     return render_template("model.html",table_data=table_data)
 
 # @app.route('/model/api')
