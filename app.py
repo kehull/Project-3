@@ -42,9 +42,11 @@ def send():
         income=request.form["income"]
         customer_id=uuid.uuid4().hex
         date=dt.datetime.today().strftime('%Y%m%d')
-        label_encoder.fit(gender)
-        encoded_gender=label_encoder.transform(gender)
-        model_data=[customer_id,encoded_gender,age,income]
+        gender_encode=label_encoder.fit(gender)
+        encoded_gender=label_encoder.transform(gender_encode)
+        id_encode=label_encoder.fit(customer_id)
+        encoded_id=label_encoder.transform(id_encode)
+        model_data=[encoded_id,encoded_gender,age,income]
         encoded_predictions = model.predict_classes(model_data)
         prediction_labels = label_encoder.inverse_transform(encoded_predictions)
         offer=prediction_labels
