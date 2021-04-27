@@ -123,16 +123,16 @@ def ben():
     return render_template("ben.html")
 
 @app.route('/interviews/jenkaslowon')
-    def jen():
-        return render_template("jen.html")
+def jen():
+    return render_template("jen.html")
 
 @app.route('/disclaimer')
 def disclaimer():
     return render_template("disclaimer.html")
 
 @app.route('/casestudy/delmar')
-    def delmar():
-        return render_template("delmar.html")
+def delmar():
+    return render_template("delmar.html")
 
 @app.route('/casestudy/showme')
 def showme():
