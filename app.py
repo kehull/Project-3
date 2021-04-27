@@ -46,7 +46,7 @@ def send():
         return redirect("/model", code=302),table_data
         
     
-    return render_template("model.html")
+    return render_template("model.html",table_data=table_data)
 
 if __name__ == "__main__":
     app.run()
