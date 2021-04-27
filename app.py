@@ -73,19 +73,19 @@ def send():
         offer=""
         
         # create giant if statement to determine prediction string
-        if prediction = 0:
+        if prediction == 0:
             offer='9b98b8c7a33c4b65b9aebfe6a799e6d9'
-        elif prediction=1:
+        elif prediction == 1:
             offer = 'ae264e3637204a6fb9bb56bc8210ddfd'
-        elif prediction=2:
+        elif prediction == 2:
             offer = 'f19421c1d4aa40978ebb69ca19b0e20d'
-        elif prediction=3:
+        elif prediction == 3:
             offer = 'fafdcd668e3743c1bb461111dcafc2a4'
-        elif prediction=4:
+        elif prediction == 4:
             offer = '2906b810c7d4411798c6938adc9daaa5'
-        elif prediction=5:
+        elif prediction == 5:
             offer = '4d5c57ea9a6940dd891ad53e9dbe8da0'
-        elif prediction=6:
+        elif prediction == 6:
             offer = '2298d6c36e964ae4a3e7e9706d1fb8c2'
         else:
             offer= '0b1e1539f2cc45b7b9fa7c272da2e1d7'
