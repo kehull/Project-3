@@ -29,7 +29,7 @@ def about():
 
 @app.route("/model", methods=["GET", "POST"])
 def send():
-    
+    table_data=table_data
     if request.method == "POST":
         table_data=table_data
         name = request.form["name"]
