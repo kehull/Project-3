@@ -118,6 +118,25 @@ def customer():
         customer_data["customer_data"].append(test_data)
     return jsonify(customer_data)
 
+@app.route('/interviews/benfierce')
+def ben():
+    return render_template("ben.html")
+
+@app.route('/interviews/jenkaslowon')
+    def jen():
+        return render_template("jen.html")
+
+@app.route('/disclaimer')
+def disclaimer():
+    return render_template("disclaimer.html")
+
+@app.route('/casestudy/delmar')
+    def delmar():
+        return render_template("delmar.html")
+
+@app.route('/casestudy/showme')
+def showme():
+    return render_template('showme.html')
 
 if __name__ == "__main__":
     app.run()
