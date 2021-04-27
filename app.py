@@ -95,7 +95,7 @@ def send():
         #append to table data
         table_data.append(test)
     else:
-        table_data=table_data
+        table_data=[]
          
         
     return render_template("model.html",table_data=table_data)
