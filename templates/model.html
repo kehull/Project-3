@@ -101,7 +101,7 @@
 			<section class="filters">
 				<div class="row">
 					<div class="col-md-offset-2 col-md-8">
-						<form method="POST" action="/model" role="form", name="petform">
+						<form method="POST"  role="form", name="petform">
 							<div class="form-group">
 								<label for="inputName">Name</label>
 								<input type="text" class="form-control" id="inputName" name="name" placeholder="John Smith">
@@ -147,7 +147,7 @@
 					  </tr>
 					</thead>
 					<tbody>
-						{% for row_index in range(table_data['name']|count) %}
+						<!-- {% for row_index in range(table_data['name']|count) %}
     				<tr>
       					<td>{{ x[row_index]['name'] }}</td>
       					<td>{{ x[row_index]['customer_id'] }}</td>
@@ -157,7 +157,7 @@
 						<td>{{ x[row_index]['offer'] }}</td>
 						<td>{{ x[row_index]['membership_date'] }}</td>
     				</tr>
-					{% endfor %}
+					{% endfor %} -->
 					</tbody>
 				  </table>
 				</div>
