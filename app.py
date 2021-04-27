@@ -21,8 +21,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 Customer = create_classes(db)
-table_data=[]
 
+table_data=[]
 
 @app.route("/")
 def home():
@@ -34,6 +34,7 @@ def about():
 
 @app.route("/model", methods=["GET", "POST"])
 def send():
+    global table_data
     table_data=table_data
     #create var to store table data
     
@@ -93,7 +94,7 @@ def send():
         test={"name":name,"customer_id":customer_id,"gender":gender,"age":age,"income":income,"offer":offer,"membership_date":date}
         #append to table data
         table_data.append(test)
-        table_data=table_data
+         
         
     return render_template("model.html",table_data=table_data)
 
