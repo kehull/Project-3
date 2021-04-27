@@ -8,7 +8,7 @@ from flask import (
     request,
     redirect)
 import joblib
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
 
 app = Flask(__name__)
@@ -42,14 +42,13 @@ def send():
         income=request.form["income"]
         customer_id=uuid.uuid4().hex
         date=dt.datetime.today().strftime('%Y%m%d')
-        gender_encode=label_encoder.fit(gender)
-        encoded_gender=label_encoder.transform(gender_encode)
-        id_encode=label_encoder.fit(customer_id)
-        encoded_id=label_encoder.transform(id_encode)
+        label_encoder.fit(gender)
+        encoded_gender=label_encoder.transform(gender)
+        label_encoder.fit(customer_id)
+        encoded_id=label_encoder.transform(customer_id)
         model_data=[[encoded_id,encoded_gender,age,income]]
-        encoded_predictions = model.predict(model_data)
-        prediction_labels = label_encoder.inverse_transform(encoded_predictions)
-        offer=prediction_labels
+        predictions = model.predict(model_data)
+        offer=predictions
         customer = Customer(name=name, customer_id=customer_id, gender=gender, age=age,income=income,offer=offer,membership_date=date)
         db.session.add(customer)
         db.session.commit()
