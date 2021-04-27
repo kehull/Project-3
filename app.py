@@ -9,6 +9,7 @@ from flask import (
     redirect)
 
 app = Flask(__name__)
+
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace('postgres://', 'postgresql://') or "sqlite:///db.sqlite"
 
@@ -42,7 +43,6 @@ def send():
         db.session.add(customer)
         db.session.commit()
         table_data={"name":name,"customer_id":customer_id,"gender":gender,"age":age,"income":income,"offer":offer,"membership_date":date}
-        
     return render_template("model.html",table_data=table_data)
 
 if __name__ == "__main__":
