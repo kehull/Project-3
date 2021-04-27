@@ -8,7 +8,7 @@ def create_classes(db):
         gender=db.Column(db.String)
         age=db.Column(db.Integer)
         income=db.Column(db.Float)
-        offer=db.Column(db.VARCHAR)
+        offer=db.Column(db.VARCHAR(32))
         membership_date=db.Column(db.VARCHAR)
 
 
