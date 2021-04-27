@@ -43,10 +43,13 @@ def send():
         db.session.add(customer)
         db.session.commit()
         table_data={"name":name,"customer_id":customer_id,"gender":gender,"age":age,"income":income,"offer":offer,"membership_date":date}
-        return redirect("/model", code=302),table_data
+        
         
     
     return render_template("model.html",table_data=table_data)
+@app.route("/results")
+    def results():
+
 
 if __name__ == "__main__":
     app.run()
