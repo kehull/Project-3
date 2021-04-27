@@ -103,19 +103,19 @@ def send():
 @app.route('/model/api')
 def customer():
     results = db.session.query(Customer.name, Customer.customer_id, Customer.gender,Customer.age,Customer.income,Customer.offer,Customer.membership_date).all()
-
+    customer_data = []
     for name,customer_id,gender,age,income,offer,membership_date in results:
 
-        customer_data = [{
+        test_data = {
             "name": name,
             "customer_id": customer_id,
             "gender": gender,
             "age": age,
             "income": income,
             "offer": offer,
-            "membership_date": membership
-        }]
-
+            "membership_date": membership_date
+        }
+        customer_data.append(test_data)
     return jsonify(customer_data)
 
 
