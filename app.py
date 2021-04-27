@@ -4,6 +4,7 @@ from models import create_classes
 import os
 from flask import (
     Flask,
+    jsonify,
     render_template,
     request,
     redirect)
@@ -20,6 +21,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 Customer = create_classes(db)
+table_data=[]
 
 
 @app.route("/")
@@ -32,8 +34,9 @@ def about():
 
 @app.route("/model", methods=["GET", "POST"])
 def send():
+    table_data=table_data
     #create var to store table data
-    table_data=[]
+    
    
     
     #load in model
@@ -90,8 +93,40 @@ def send():
         test={"name":name,"customer_id":customer_id,"gender":gender,"age":age,"income":income,"offer":offer,"membership_date":date}
         #append to table data
         table_data.append(test)
+        table_data=table_data
         
     return render_template("model.html",table_data=table_data)
+
+# @app.route('/model/api')
+# def customer():
+#     results = db.session.query(Customer.name, Customer.customer_id, Customer.gender,Customer.age,Customer.income,Customer.offer,Customer.membership_date).all()
+
+#     name=[result[0] for result in results]
+#     cusomer_id = [result[0] for result in results] 
+#     gender = results[2]
+#     age=results[3]
+#     income=results[4]
+#     offer=results[5]
+#     membership=results[6] 
+
+#     customer_data = [{
+#         "name": name,
+#         "Customer_ID": customer,
+#         "lat": lat,
+#         "lon": lon,
+#         "text": hover_text,
+#         "hoverinfo": "text",
+#         "marker": {
+#             "size": 50,
+#             "line": {
+#                 "color": "rgb(8,8,8)",
+#                 "width": 1
+#             },
+#         }
+#     }]
+
+#     return jsonify(pet_data)
+
 
 if __name__ == "__main__":
     app.run()
