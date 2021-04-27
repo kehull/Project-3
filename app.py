@@ -96,7 +96,7 @@ def send():
         table_data.append(test)
     
          
-    table_data=[]    
+     
     return render_template("model.html",table_data=table_data)
 
 # @app.route('/model/api')
