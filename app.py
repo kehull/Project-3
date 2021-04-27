@@ -99,35 +99,29 @@ def send():
         
     return render_template("model.html",table_data=table_data)
 
-# @app.route('/model/api')
-# def customer():
-#     results = db.session.query(Customer.name, Customer.customer_id, Customer.gender,Customer.age,Customer.income,Customer.offer,Customer.membership_date).all()
+@app.route('/model/api')
+def customer():
+    results = db.session.query(Customer.name, Customer.customer_id, Customer.gender,Customer.age,Customer.income,Customer.offer,Customer.membership_date).all()
 
-#     name=[result[0] for result in results]
-#     cusomer_id = [result[0] for result in results] 
-#     gender = results[2]
-#     age=results[3]
-#     income=results[4]
-#     offer=results[5]
-#     membership=results[6] 
+    name=[result[0] for result in results]
+    customer_id= [result[1] for result in results] 
+    gender = [result[2] for result in results]
+    age=[result[3] for result in results]
+    income=[result[4] for result in results]
+    offer=[result[5] for result in results]
+    membership=[result[6] for result in results] 
 
-#     customer_data = [{
-#         "name": name,
-#         "Customer_ID": customer,
-#         "lat": lat,
-#         "lon": lon,
-#         "text": hover_text,
-#         "hoverinfo": "text",
-#         "marker": {
-#             "size": 50,
-#             "line": {
-#                 "color": "rgb(8,8,8)",
-#                 "width": 1
-#             },
-#         }
-#     }]
+    customer_data = [{
+        "name": name,
+        "customer_id": customer_id,
+        "gender": gender,
+        "age": age,
+        "income": income,
+        "offer": offer,
+        "membership_date": membership
+    }]
 
-#     return jsonify(pet_data)
+    return jsonify(customer_data)
 
 
 if __name__ == "__main__":
