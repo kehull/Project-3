@@ -9,7 +9,7 @@ from flask import (
     redirect)
 import joblib
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import LabelEncoder
+
 
 app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
@@ -34,8 +34,8 @@ def about():
 def send():
     #create var to store table data
     table_data=[]
-    #def label encoder
-    label_encoder=LabelEncoder()
+   
+    
     #load in model
     model=joblib.load('models/random_forest_model.h5')   
     
@@ -54,16 +54,9 @@ def send():
         #create date
         date=dt.datetime.today().strftime('%Y%m%d')
         
-        #encode gender for model
-        label_encoder.fit(gender)
-        encoded_gender=label_encoder.transform(gender)
-        
-        #encode customer_id for model
-        label_encoder.fit(customer_id)
-        encoded_id=label_encoder.transform(customer_id)
-        
+      
         #store data into model data
-        model_data=[[encoded_id,encoded_gender,age,income]]
+        model_data=[[age,income]]
         
         #predict
         predictions_array = model.predict(model_data)
