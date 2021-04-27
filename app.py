@@ -47,8 +47,6 @@ def send():
         
     
     return render_template("model.html",table_data=table_data)
-@app.route("/results")
-    def results():
 
 
 if __name__ == "__main__":
