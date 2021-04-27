@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 Customer = create_classes(db)
-table_data=[]
+
 
 @app.route("/")
 def home():
@@ -28,10 +28,10 @@ def about():
     return render_template("about.html")
 
 @app.route("/model", methods=["GET", "POST"])
+table_data=[]
 def send():
     
     if request.method == "POST":
-        table_data=table_data
         name = request.form["name"]
         gender = request.form["gender"]
         age = request.form["age"]
