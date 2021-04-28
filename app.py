@@ -1,3 +1,4 @@
+#import dependencies
 import datetime as dt
 import uuid
 from models import create_classes
@@ -11,20 +12,23 @@ from flask import (
 import joblib
 from sklearn.linear_model import LogisticRegression
 
-
+#set up app
 app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
+#config app
 app.config['JSON_SORT_KEYS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace('postgres://', 'postgresql://') or "sqlite:///db.sqlite"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+#set up db
 db = SQLAlchemy(app)
 
 Customer = create_classes(db)
 
 table_data=[]
 
+#set up routes
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -102,8 +106,12 @@ def send():
 
 @app.route('/model/api')
 def customer():
+    #set up api
+    #query from db
     results = db.session.query(Customer.name, Customer.customer_id, Customer.gender,Customer.age,Customer.income,Customer.offer,Customer.membership_date).all()
+    #set up list of dictonaries to store end result
     customer_data = {"customer_data":[]}
+    #loop through results and create dictionary
     for name,customer_id,gender,age,income,offer,membership_date in results:
 
         test_data = {
@@ -115,6 +123,7 @@ def customer():
             "offer": offer,
             "membership_date": membership_date
         }
+        #append dictionary to customer_data
         customer_data["customer_data"].append(test_data)
     return jsonify(customer_data)
 
