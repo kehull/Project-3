@@ -1,7 +1,7 @@
 #import dependencies
 import datetime as dt
 import uuid
-from models import create_classes
+from schema import create_classes
 import os
 from flask import (
     Flask,
