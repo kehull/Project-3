@@ -1,0 +1,11 @@
+X offer_id	
+X gender	
+age - seems to not matter much?
+became_member_on	
+X income	
+X reward	
+X channels	
+X difficulty	
+X duration	
+X offer_type = MUCH more valuable than offer id
+X offer_received	
